@@ -47,8 +47,7 @@
 
     #defining the ways annotators entering the annotation system
     "login": {
-      "type": 'url_direct',    #can be 'password' or 'url_direct'
-      "url_argument": 'PROLIFIC_PID' # when the login type is set to 'url_direct', 'url_argument' must be setup for a direct url argument login
+      "type": 'password'    #can be 'password' or 'url_direct'
     },
 
     #password requirement will be removed if this is added, the associated function is still under development
