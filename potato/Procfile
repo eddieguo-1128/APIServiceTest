@@ -1,0 +1,1 @@
+web: python potato/flask_server.py start simple_examples/configs/simple-check-box.yaml
