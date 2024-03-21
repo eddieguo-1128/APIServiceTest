@@ -1,1 +1,1 @@
-web: python potato/flask_server.py start prolific_api_example/configs/match_finding.yaml
+web: python potato/flask_server.py start match_finding_with_prestudy/configs/match_finding.yaml
