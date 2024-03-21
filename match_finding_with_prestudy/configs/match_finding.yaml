@@ -3,7 +3,7 @@
 
     "server_name": "potato annotator",
 
-    "annotation_task_name": "Match finding",
+    "annotation_task_name": "Compound Annotation",
 
     # Potato will write the annotation file for all annotations to this
     # directory, as well as per-annotator output files and state information
@@ -50,9 +50,6 @@
       "type": 'password'    #can be 'password' or 'url_direct'
     },
 
-    #password requirement will be removed if this is added, the associated function is still under development
-    "require_no_password": True,
-
     #the jumping-to-id function will be disabled if "jumping_to_id_disabled" is True
     "jumping_to_id_disabled": False,
 
@@ -73,14 +70,13 @@
 
     "prestudy": {
         "on": True,
-        "minimum_score": 0.8,
+        "minimum_score": 1,
         "groundtruth_key": 'whether_match',
-        "question_key": 'Whether the presented sentences are discussing the same scientific finding',
-        "answer_mapping": {'Yes': True, 'No': False},
+        "question_key": 'Is the compound 东西 (east + west = thing) endocentric or exocentric?',
+        "answer_mapping": {'Exocentric': True, 'Endocentric': False},
         "pass_page": 'surveyflow/prestudy_pass.jsonl',
         "fail_page": 'surveyflow/prestudy_fail.jsonl'
     },
-
 
     "automatic_assignment": {
       #whether do automatic task assignment for annotators, default False.
@@ -94,7 +90,6 @@
       "users": [  ],
     },
 
-
     # How many seconds do you want the annotators spend on each instance, after
     # that, an alert will be sent per alert_time_each_instance seconds.
     "alert_time_each_instance": 10000000,
@@ -103,10 +98,10 @@
     "annotation_schemes": [      
         {
             "annotation_type": "radio",
-            "name": "Whether the presented sentences are discussing the same scientific finding",
-            "description": "Whether the presented sentences are discussing the same scientific finding",
+            "name": "What is the head position of the given compound word",
+            "description": "What is the head position of the given compound word",
             "labels": [
-               "Yes", "No",
+               "Left", "Right", "Exocentric",
             ],
 
             # If true, the field will have an optional text box the user can
@@ -129,7 +124,7 @@
     # to influence the layout and description of your task. This is not a full
     # HTML page, just the piece that does lays out your task's pieces
     #"html_layout": "templates/examples/fixed_keybinding_layout.html",
-    "html_layout": "templates/layout.html",
+    "html_layout": "default",
 
     # The core UI files for Potato. You should not need to change these normally.
     #
