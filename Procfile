@@ -1,1 +1,1 @@
-web: python potato/flask_server.py start simple_examples/configs/simple-check-box.yaml
+web: python potato/flask_server.py start prolific_api_example/configs/match_finding.yaml
